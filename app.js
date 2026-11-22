@@ -74,7 +74,7 @@ const receiptSchema = Schema.object({
           name: Schema.string(),
           amount: Schema.number(),
           category: Schema.enumString({
-            values: [
+            enum: [
               "Meals",
               "Travel",
               "Lodging",
