@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClearReceipt — Receipts, sorted privately on-device, explained in plain English</title>
+  <meta name="description" content="Paste a receipt. ClearReceipt sorts every line item on-device with Firebase AI Logic hybrid inference, then explains the totals in plain English from the cloud." />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "firebase/app": "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js",
+        "firebase/app-check": "https://www.gstatic.com/firebasejs/12.19.0/firebase-app-check.js",
+        "firebase/ai": "https://www.gstatic.com/firebasejs/12.19.0/firebase-ai.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>ClearReceipt</h1>
+      <p class="tagline">
+        Paste any receipt or invoice. ClearReceipt sorts every line item
+        <strong>privately on your device</strong>, then explains the totals
+        in plain English.
+      </p>
+      <p class="how">
+        Built with <strong>Firebase AI Logic hybrid inference</strong>: the raw
+        receipt — your sensitive financial data — is processed on-device by
+        Gemini Nano whenever Chrome offers it, and only the short extracted
+        summary ever goes to a cloud model for the explanation.
+      </p>
+    </header>
+
+    <section class="panel">
+      <label for="receipt-input">Receipt or invoice text</label>
+      <textarea id="receipt-input" rows="12" spellcheck="false"
+        placeholder="Paste receipt text here… (or load a sample below)"></textarea>
+      <div class="samples">
+        <span>Try a sample:</span>
+        <button type="button" data-sample="cafe">Coffee run</button>
+        <button type="button" data-sample="office">Office supplies</button>
+        <button type="button" data-sample="hotel">Hotel folio</button>
+      </div>
+      <div class="actions">
+        <button id="sort-btn" type="button" class="primary">Sort this receipt</button>
+        <button id="explain-btn" type="button" disabled>Explain it in plain English</button>
+      </div>
+      <p id="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="result" hidden></section>
+
+    <section id="explain-card" class="card" hidden>
+      <div class="card-head">
+        <h2>What this means</h2>
+        <span class="badge cloud">Cloud · Gemini</span>
+      </div>
+      <p id="explain-body"></p>
+    </section>
+
+    <footer>
+      <p>
+        On-device first: when Chrome's built-in Gemini Nano is available, your
+        receipt text never leaves your machine. Every result shows a badge
+        telling you exactly where it was answered.
+      </p>
+    </footer>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+
+# Secrets and local-only files — never commit these.
+.env
+.env.*
+service-account*.json
+*firebase-adminsdk*.json
+
+# NOTE: App Check debug tokens must never be committed. They are generated
+# at runtime in the browser (see app.js) and registered in the Firebase
+# console only.

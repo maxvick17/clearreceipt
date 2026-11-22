@@ -1,0 +1,1 @@
+{"hosting":{"cleanUrls":true,"ignore":["firebase.json","**/node_modules/**","README.md","SUBMISSION.md","DEMO_SCRIPT.md","package.json","package-lock.json"],"public":"."}}
