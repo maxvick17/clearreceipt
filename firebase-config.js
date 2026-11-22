@@ -25,4 +25,4 @@ export const RECAPTCHA_ENTERPRISE_SITE_KEY = "6LdSOCwuAAAAAJ-lJPTYlRm39VfehHsLBu
 
 // Cloud model used for the deep "Explain" pass. The default hybrid fallback
 // model also works; this pins a fast, free-tier-friendly cloud model.
-export const CLOUD_MODEL = "gemini-2.5-flash-lite";
+export const CLOUD_MODEL = "gemini-3.5-flash-lite";
